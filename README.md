@@ -9,3 +9,4 @@ A website that breaks all of the areas of London down by Borough. Users can log 
 
 07/01/2022
 * Simple front end design with core backend functionalities incorporated
+* Currently not deployed to a live web server
