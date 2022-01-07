@@ -1,0 +1,68 @@
+{% extends "main/header.html" %} 
+
+{% block content %}
+
+<div class="container">
+
+    <div class="row">
+        <div class="col l12 m12 s12">
+    
+            <h1>{{area.area_name}}</h1>
+
+        </div>
+
+        <div class="col l12 m12 s12">
+
+        {% if user.is_authenticated %}
+
+            {% if instance %}
+
+                {% for i in instance %}
+                    <p>{{ i.comment }}</p>
+                    
+                    <img src="/media/{{i.image}}" class="responsive-img">
+
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+
+                        <button type="submit" name="action" value="delete">Delete Entry</button>
+
+                {% endfor %}
+
+            {% else %}
+
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    
+                    {{ form }}
+
+                    <button type="submit">Upload Photo</button>
+                </form>
+
+            {% endif %}
+
+        {% else %}
+
+            <p><a href="/login">Login </a>to register a visit </p>
+
+        {% endif %}
+        
+        </div>
+    </div>
+</div>
+  
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+{% endblock %}

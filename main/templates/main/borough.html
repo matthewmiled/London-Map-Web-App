@@ -1,0 +1,42 @@
+{% extends "main/header.html" %} 
+
+{% block content %}
+
+<div class="container">
+
+    <div class="row">
+
+        {% for area, instance in instances.items %}
+
+            <div class="col s12 m7 l6">
+                <div class="card">
+                    <div class="card-image">
+                        {% if instance.image %}
+                            
+                            <img src="/media/{{instance.image}}" class="responsive-img"> 
+                        {% else %}
+                            <img src="/media/mysite/grey.jpeg" class="responsive-img"> 
+                        {% endif %}
+                    </div>
+                    <div class="card-content">
+                        <p>{{ area }}</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="{{borough}}/{{area}}">View Area</a>
+                    </div>
+                </div>
+            </div>
+
+        {% endfor %}
+    </div>
+
+
+
+    
+
+    
+
+
+
+
+{% endblock %}

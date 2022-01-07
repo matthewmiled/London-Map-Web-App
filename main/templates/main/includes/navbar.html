@@ -1,0 +1,23 @@
+<nav class="black">
+    <div class="nav-wrapper container">
+        <a href="/" class="brand-logo">London Logger</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="/">Home</a></li>
+            
+            <!-- This is logic to determine whether the user is logged in. 
+                 If they are logged in, the nav bar will look different -->
+                 
+            {% if user.is_authenticated %}
+            
+                <li><a href="/">{{user.username}}</a></li>
+                <li><a href="/logout/">Logout</a></li>
+            
+            {% else %}
+                
+                <li><a href="/register">Register</a></li>
+                <li><a href="/login">Login</a></li>
+                
+            {% endif %}
+        </ul>
+    </div>
+</nav>
