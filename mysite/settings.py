@@ -78,15 +78,10 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # SWITCHING FROM DEFAULT SQLITE TO POSTGRES
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'london_db',
-        'USER': 'postgres',
-        'PASSWORD': 'England96!',
-        'HOST': 'localhost',
-        'PORT': '5432',
-
-    }
+   'default': {
+       'ENGINE': 'django.db.backends.sqlite3',
+       'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+   }
 }
 
 
